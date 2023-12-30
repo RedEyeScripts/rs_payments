@@ -1,6 +1,6 @@
 Config = Config or {}
 
-
+Config.Core = 'rs_base'
 
 
 Config.CustomCashRegisters = {

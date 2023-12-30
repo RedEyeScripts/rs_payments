@@ -16,7 +16,11 @@ client_scripts {
     'pay.lua',
 }
 
-
+depedencies  {
+    'ox_target',
+    'oxmysql',
+    'ox_lib'
+}
 
 
 server_scripts { 
