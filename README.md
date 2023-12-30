@@ -1,4 +1,4 @@
 # Payments
 
 Tiny payment system with mysql 
-Currently in Estonian
+Currently in Estonian lang
