@@ -1,4 +1,4 @@
-local NPX = exports.rs_base:GetCoreObject()
+local NPX = exports[Config.Core]:GetCoreObject()
 
 
 function GetBills()
@@ -8,7 +8,6 @@ function GetBills()
     exports.oxmysql:execute('SELECT * FROM payments WHERE citizenid = ? AND paid = ?', {citizenid, 1}, function(data)
         if data then
             TriggerClientEvent('rs_payment:GetBills', data)
-            --print(json.encode(data))
         end
     end)
 
@@ -23,7 +22,6 @@ RegisterNetEvent('GetAll', function()
     exports.oxmysql:execute('SELECT * FROM payments WHERE citizenid = ? AND paid = ?', {citizenid, 1}, function(data)
         if data then
             TriggerClientEvent('rs_payment:GetBills', src, data)
-            --print(json.encode(data))
         end
 
     end)
@@ -76,13 +74,7 @@ RegisterNetEvent('PayBill', function(price)
         '1'
 
     })
-    /*exports.oxmysql:update("UPDATE payments SET paid = :h, WHERE citizenid = :i AND amount = :g AND paid = :b;",{
-        h = '0'
-        i = citizenid,
-        g = amo,
-        b = 1,
-    })*/
-    --exports.oxmysql:execute('UPDATE payments SET paid = ?, WHERE citizenid = ? AND amount = ? AND paid = ?', {citizenid, amo, 1})
+   
         
 
 
@@ -103,7 +95,6 @@ RegisterNetEvent('rs_payment:SendPayment', function(title, amount, id)
         g = amount,
         b = 1,
     })
-    print("HELLOOOOOOOOO")
 end)
 
 

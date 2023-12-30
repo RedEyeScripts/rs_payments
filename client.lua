@@ -4,7 +4,7 @@ local BankPed = nil
 local Targets = {}
 local Till = {}
 local time = 1000
-local NPX = exports.rs_base:GetCoreObject()
+local NPX = exports[Config.Core]:GetCoreObject()
 local model = 'prop_till_03'
 
 function loadModel(model) if not HasModelLoaded(model) then
